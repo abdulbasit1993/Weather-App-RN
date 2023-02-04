@@ -69,11 +69,11 @@ export default function Details(props) {
             </Text>
 
             <View>
-              <Text style={{color: '#FFF', fontSize: 22, marginBottom: 16}}>
+              <Text style={{color: '#FFF', fontSize: 23, marginBottom: 16}}>
                 Weather Details
               </Text>
 
-              <View style={{width: deviceWidth - 60}}>
+              <View style={{width: deviceWidth - 70}}>
                 <Data value={data['wind']['speed']} title="Wind" />
                 <Data value={data['main']['pressure']} title="Pressure" />
                 <Data value={`${data['main']['humidity']}%`} title="Humidity" />
