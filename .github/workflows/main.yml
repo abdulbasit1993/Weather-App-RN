@@ -1,7 +1,10 @@
 name: Build Android
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+    tags:
+      - "v*"
   
 jobs:
   build:
@@ -22,6 +25,6 @@ jobs:
           path: android/app/build/outputs/apk/release/app-release.apk
           
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: ncipollo/release-action@v1
         with:
-          files: android/app/build/outputs/apk/release/app-release.apk
+          artifacts: "android/app/build/outputs/apk/release/app-release.apk"
