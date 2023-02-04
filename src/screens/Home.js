@@ -13,7 +13,7 @@ import {deviceHeight, deviceWidth} from '../utils/Dimensions';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Cards from '../components/Cards';
 
-export default function Home() {
+export default function Home(props) {
   const [city, setCity] = useState('');
 
   const cities = [
@@ -80,7 +80,10 @@ export default function Home() {
               placeholderTextColor="#FFFFFF"
               style={{paddingHorizontal: 10, color: '#FFFFFF', fontSize: 16}}
             />
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity
+              onPress={() =>
+                props.navigation.navigate('Details', {name: city})
+              }>
               <Icon name="search" size={22} color="#FFFFFF" />
             </TouchableOpacity>
           </View>
@@ -90,7 +93,11 @@ export default function Home() {
             horizontal
             data={cities}
             renderItem={({item}) => (
-              <Cards name={item.name} image={item.image} />
+              <Cards
+                name={item.name}
+                image={item.image}
+                navigation={props.navigation}
+              />
             )}
           />
         </View>
