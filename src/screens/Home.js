@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   myLocationText: {
     color: '#FFFFFF',
-    fontSize: 25,
+    fontSize: 26,
     paddingHorizontal: 10,
     marginTop: 220,
     marginBottom: 20,
